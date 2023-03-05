@@ -1,7 +1,7 @@
 // import React, { useState } from 'react';
 // import './App.css';
 
-import { Container, Row, } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import NavBar from './components/NavBar';
 import CalendarPlanner from './components/Calender';
 
@@ -15,6 +15,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
+
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -52,14 +53,14 @@ function App() {
   ];
 
   const [allEvents, setAllEvents] = useState(events)
-
+  console.log(events);
+  console.log(allEvents);
   return (
     <div className="App ">
 
-      {/* <NavBar /> */}
-      <div>
-        <Calendar localizer={localizer} events={events} startAccessor="start" endAccessor="end" style={{ minHeight: "400px", height: 500, margin: "50px", marginTop: "100px" }} />
-      </div>
+      <NavBar />
+
+      <CalendarPlanner></CalendarPlanner>
 
 
     </div>
